@@ -1,4 +1,4 @@
-import { nanoid } from 'nanoid';
+import {nanoid} from 'nanoid';
 
 export type CartType = {
     id: string;
@@ -6,7 +6,9 @@ export type CartType = {
     deliveryMethodId?: number;
     paymentIntentId?: string;
     clientSecret?: string;
+    coupon?: Coupon;
 }
+
 export type CartItem = {
     productId: number;
     productName: string;
@@ -23,4 +25,13 @@ export class Cart implements CartType {
     deliveryMethodId?: number;
     paymentIntentId?: string;
     clientSecret?: string;
+    coupon?: Coupon;
+}
+
+export type Coupon = {
+    name: string;
+    amountOff?: number;
+    percentOff?: number;
+    promotionCode: string;
+    couponId: string;
 }
